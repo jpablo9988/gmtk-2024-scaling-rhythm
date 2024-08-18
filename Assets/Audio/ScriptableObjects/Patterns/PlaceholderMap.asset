@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlaceholderMap
   m_EditorClassIdentifier: 
   beatList:
-  - activationBeat: 3
+  - activationBeat: 10
     beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
-  - activationBeat: 5
+  - activationBeat: 10.5
     beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}

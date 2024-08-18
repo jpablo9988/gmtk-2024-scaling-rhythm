@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Beats/BeatsMap")]
+[CreateAssetMenu(menuName = "Pattern/PatternsMap")]
 public class RhythmMap : ScriptableObject
 {
     [SerializeField]
@@ -23,7 +23,7 @@ public class RhythmMap : ScriptableObject
         /// when this beat first manifests. This is equivalent to the "tell". 
         /// </summary>
         public float activationBeat;
-        public BeatType beatType;
+        public PatternType beatType;
 
     };
 }

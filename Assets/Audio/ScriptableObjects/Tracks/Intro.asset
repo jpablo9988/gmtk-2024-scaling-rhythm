@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicName: Intro
   musicClip: {fileID: 8300000, guid: 1164c8f8cc1afd14db22ed905dbcd109, type: 3}
+  isLoopable: 0

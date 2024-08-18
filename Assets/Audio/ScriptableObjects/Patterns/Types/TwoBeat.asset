@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: TwoBeat
   m_EditorClassIdentifier: 
   beatsUntilHit: 2
+  inputWindow: 0.5
   sfxActivation: {fileID: 0}
   sfxOnHit: {fileID: 0}

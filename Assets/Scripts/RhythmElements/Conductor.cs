@@ -7,8 +7,10 @@ using UnityEngine;
 /// </summary>
 public class Conductor : MonoBehaviour
 {
-
-    [Header("Music Trackers. ")]
+    [Header("Dependencies ")]
+    [SerializeField]
+    private PatternManager _patternManager;
+    [Header("Music Trackers(ReadOnly)")]
     [Tooltip("The current position in seconds of a rhythm track. ")]
     [ReadOnly]
     [SerializeField]
@@ -65,6 +67,8 @@ public class Conductor : MonoBehaviour
         _localBPS = 60f / _localBPM;
         _beatsPerLoop = musicTrack.BPM * (musicTrack.MusicClip.length / 60);
         this._musicTrack = musicTrack;
+        // --- set input pattern map: ---- //
+        _patternManager.SetPlayableMap(this, musicTrack.Map);
         _isTracking = true;
     }
     private void Update()
@@ -74,6 +78,7 @@ public class Conductor : MonoBehaviour
             if (!_source.isPlaying)
             {
                 _isTracking = false;
+                _patternManager.StopPlayableMap();
                 return;
             }
             _positionInSeconds = (float)(AudioSettings.dspTime - _dspTime - _musicTrack.OffsetUntilStart);
