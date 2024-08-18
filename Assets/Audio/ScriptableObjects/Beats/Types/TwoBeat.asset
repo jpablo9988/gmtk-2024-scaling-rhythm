@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e07e9ef87e6753d40a601db7b0b6b46c, type: 3}
-  m_Name: PlaceholderTrack
+  m_Script: {fileID: 11500000, guid: 56245f0a7d509d341b72b0262a9d8021, type: 3}
+  m_Name: TwoBeat
   m_EditorClassIdentifier: 
-  musicName: Placeholder
-  musicClip: {fileID: 8300000, guid: 8efd122e12c0a574c91566ed34025431, type: 3}
-  musicBPM: 60
-  tempoChanges: []
-  offsetUntilStart: 0
+  beatsUntilHit: 2
+  sfxActivation: {fileID: 0}
+  sfxOnHit: {fileID: 0}

@@ -17,8 +17,13 @@ public class RhythmTrack : Track
     [Tooltip("In seconds, the time it takes for the song to start after 0:00:00")]
     [SerializeField]
     private float offsetUntilStart;
+    [Tooltip("Contains a reference to the mapping informaation for when the player needs to input an action in rhythm. ")]
+    [SerializeField]
+    private RhythmMap map;
     public float BPM { get { return musicBPM; } private set { musicBPM = value; } }
     public float OffsetUntilStart { get { return offsetUntilStart; } private set { offsetUntilStart = value; } }
+
+    public RhythmMap Map { get { return map; } private set { map = value; } }
 
 
     [System.Serializable]
