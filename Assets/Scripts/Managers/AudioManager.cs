@@ -41,10 +41,10 @@ public class AudioManager : MonoBehaviour
             audioSource.Stop();
             return;
         }
-        StartCoroutine(FadeAudioMixer.StartFade(musicMixer, musicMixerExposedParam, fadeOutDuration, 0.0001f));
+        StartCoroutine(UtilitiesAudioMixer.StartFade(musicMixer, musicMixerExposedParam, fadeOutDuration, 0.0001f));
     }
     /// <summary>
-    /// Plays a new audio clip (taken from track as track.MusicClip) with the option of fading it in. If a clip is currently playing, it will fade out or stop
+    /// Plays a new audio clip with the option of fading it in. If a clip is currently playing, it will fade out or stop
     /// according to preference.
     /// </summary>
     /// <param name="track"> Which clip it will play. </param>
@@ -53,36 +53,39 @@ public class AudioManager : MonoBehaviour
     {
 
         float vol = PlayerSettings.preferedVolume;
+
         if (!fadeTrack)
         {
-            audioSource.Stop();
-            audioSource.clip = track.MusicClip;
-            FadeAudioMixer.SetVolume(musicMixer, musicMixerExposedParam,
+            UtilitiesAudioMixer.SetVolume(musicMixer, musicMixerExposedParam,
                 PlayerSettings.preferedVolume);
-            audioSource.Play();
+            PlayTrack(track);
             return;
         }
         if (!audioSource.isPlaying)
         {
-            FadeAudioMixer.SetVolume(musicMixer, musicMixerExposedParam, 0.0001f);
-            audioSource.clip = track.MusicClip;
-            audioSource.Play();
-            StartCoroutine(FadeAudioMixer.StartFade(musicMixer, musicMixerExposedParam,
+            UtilitiesAudioMixer.SetVolume(musicMixer, musicMixerExposedParam, 0.0001f);
+            PlayTrack(track);
+            StartCoroutine(UtilitiesAudioMixer.StartFade(musicMixer, musicMixerExposedParam,
                 fadeInDuration, vol, track, StartRhythmTracking));
         }
         else
         {
-            StartCoroutine(FadeAudioMixer.StartFade(musicMixer, musicMixerExposedParam,
+            StartCoroutine(UtilitiesAudioMixer.StartFade(musicMixer, musicMixerExposedParam,
                 fadeOutDuration, 0, track, (paramClip) =>
                 {
-                    audioSource.Stop();
-                    audioSource.clip = paramClip.MusicClip;
-                    audioSource.Play();
+                    PlayTrack(paramClip);
                     StartRhythmTracking(paramClip);
-                    StartCoroutine(FadeAudioMixer.StartFade(musicMixer, musicMixerExposedParam
+                    StartCoroutine(UtilitiesAudioMixer.StartFade(musicMixer, musicMixerExposedParam
                         , fadeInDuration, vol));
                 }));
         }
+    }
+    private void PlayTrack(Track track)
+    {
+        audioSource.Stop();
+        audioSource.clip = track.MusicClip;
+        audioSource.loop = track.IsLoopable;
+        audioSource.Play();
     }
     private void StartRhythmTracking(Track track)
     {

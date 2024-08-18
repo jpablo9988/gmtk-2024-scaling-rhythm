@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-public static class FadeAudioMixer
+
+public static class UtilitiesAudioMixer
 {
     public static void SetVolume(AudioMixer mixer, string exposedParam, float targetVolume)
     {
