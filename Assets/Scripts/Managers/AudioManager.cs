@@ -10,6 +10,8 @@ public class AudioManager : MonoBehaviour
     [Tooltip("A reference to the Conductor which tracks rhythm properties of a track in-game. ")]
     [SerializeField]
     private Conductor conductor;
+    [SerializeField]
+    private SFXManager sfxManager;
     [Tooltip("A reference to which Audio Mixer the source is outputting towards. ")]
     [SerializeField]
     private AudioMixer musicMixer;
@@ -18,10 +20,13 @@ public class AudioManager : MonoBehaviour
     private string musicMixerExposedParam;
     [Header("Fading Properties")]
     [SerializeField]
-    private float fadeOutDuration, fadeInDuration;
+    private float fadeOutDuration;
+    [SerializeField]
+    private float fadeInDuration;
 
 
     private AudioSource audioSource;
+    private Track currTrack;
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -53,6 +58,7 @@ public class AudioManager : MonoBehaviour
     {
 
         float vol = PlayerSettings.preferedVolume;
+        this.currTrack = track;
 
         if (!fadeTrack)
         {
@@ -80,6 +86,13 @@ public class AudioManager : MonoBehaviour
                 }));
         }
     }
+    public void PlaySFX(AudioClip clip, float pan = 0)
+    {
+        if (clip != null)
+        {
+            sfxManager.PlaySFX(clip, PlayerSettings.preferedVolume, pan);
+        }
+    }
     private void PlayTrack(Track track)
     {
         audioSource.Stop();
@@ -92,7 +105,7 @@ public class AudioManager : MonoBehaviour
         
         if (track is RhythmTrack rhythmTrack)
         {
-            conductor.ConductMusicTrack(rhythmTrack);
+            conductor.ConductMusicTrack(this, rhythmTrack);
         }
     }
 }

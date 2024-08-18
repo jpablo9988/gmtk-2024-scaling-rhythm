@@ -11,15 +11,15 @@ public class RhythmTrack : Track
     [Tooltip("Beats per minute.")]
     [SerializeField]
     private float musicBPM;
-    [Tooltip("A list of the tempo changes the current song has. (Not supported yet). ")]
-    [SerializeField]
-    private List<SongTempoChanges> tempoChanges;
     [Tooltip("In seconds, the time it takes for the song to start after 0:00:00")]
     [SerializeField]
     private float offsetUntilStart;
-    [Tooltip("Contains a reference to the mapping informaation for when the player needs to input an action in rhythm. ")]
+    [Tooltip("Contains a reference to the mapping information for when the player needs to input an action in rhythm. ")]
     [SerializeField]
     private RhythmMap map;
+    [Tooltip("A list of the tempo changes the current song has. (Not supported yet). ")]
+    [SerializeField]
+    private List<SongTempoChanges> tempoChanges;
     public float BPM { get { return musicBPM; } private set { musicBPM = value; } }
     public float OffsetUntilStart { get { return offsetUntilStart; } private set { offsetUntilStart = value; } }
 

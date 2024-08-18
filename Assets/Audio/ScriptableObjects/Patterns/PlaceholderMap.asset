@@ -12,8 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dca1b32a6b2ac4419ea02ff50a9203e, type: 3}
   m_Name: PlaceholderMap
   m_EditorClassIdentifier: 
+  sfx_TellPan: 1
+  sfx_ActionPan: -1
   beatList:
-  - activationBeat: 10
+  - activationBeat: 8
     beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
-  - activationBeat: 10.5
+  - activationBeat: 8.5
     beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 9
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 15
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 15.5
+    beatType: {fileID: 11400000, guid: 7c37b895cbe749c47a7307f21ffb5f4a, type: 2}

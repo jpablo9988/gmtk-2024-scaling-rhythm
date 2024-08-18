@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56245f0a7d509d341b72b0262a9d8021, type: 3}
-  m_Name: TwoBeat
+  m_Name: HalfBeat
   m_EditorClassIdentifier: 
-  beatsUntilHit: 2
-  inputWindow: 0.5
-  triggerInput: 0
+  beatsUntilHit: 0.5
+  inputWindow: 0.25
+  triggerInput: 1
   sfxInfo:
     sfxOnTell: {fileID: 8300000, guid: 881ab1cdfec3c0f45bb9d37581d81900, type: 3}
     sfxOnPerfect: {fileID: 8300000, guid: c60c3b48a0d481f40ae4cdeb1ace5ea8, type: 3}

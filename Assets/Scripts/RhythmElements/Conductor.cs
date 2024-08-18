@@ -58,7 +58,7 @@ public class Conductor : MonoBehaviour
     /// Start tracking a Rhythm Track.
     /// </summary>
     /// <param name="musicTrack"></param>
-    public void ConductMusicTrack(RhythmTrack musicTrack)
+    public void ConductMusicTrack(AudioManager manager, RhythmTrack musicTrack)
     {
         // --- reset variables to default ! ---- //
         _dspTime = (float)AudioSettings.dspTime;
@@ -68,7 +68,7 @@ public class Conductor : MonoBehaviour
         _beatsPerLoop = musicTrack.BPM * (musicTrack.MusicClip.length / 60);
         this._musicTrack = musicTrack;
         // --- set input pattern map: ---- //
-        _patternManager.SetPlayableMap(this, musicTrack.Map);
+        _patternManager.SetPlayableMap(this, manager, musicTrack.Map);
         _isTracking = true;
     }
     private void Update()
@@ -87,6 +87,7 @@ public class Conductor : MonoBehaviour
             //Calculations for Loops:
             if (_totalPositionInBeats >= (_completedLoops + 1) * _beatsPerLoop && _musicTrack.IsLoopable)
             {
+                _patternManager.ResetCurrentMap();
                 _completedLoops++;
                 _localBPM = _musicTrack.BPM;
             }
