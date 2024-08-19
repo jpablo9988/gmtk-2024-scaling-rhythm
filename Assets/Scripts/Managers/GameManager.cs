@@ -6,24 +6,17 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private AudioManager _audioManager;
-
     [SerializeField]
     private Track musicTrack;
     [SerializeField]
     private Track rhythmTrack;
     void Start()
     {
-        // -- testing audio 
+        // -- testing audio -- //
         _audioManager.PlayMusicTrack(musicTrack, true);
         StartCoroutine(Timers.GenericTimer(1.0f, () =>
         {
             _audioManager.PlayMusicTrack(rhythmTrack, true);
         }));
     }
-
-    private void Update()
-    {
-        
-    }
-
 }

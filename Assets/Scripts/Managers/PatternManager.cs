@@ -17,17 +17,19 @@ public class PatternManager : MonoBehaviour
     [SerializeField]
     private int beatIndex;
     private List<ActionableBeat> whenToInputList = new();
+    [SerializeField]
+    private ScoreObserver scoreObserver;
 
     private struct ActionableBeat
     {
         public float actionBeat;
-        public float actionWindow;
+        public PatternType.InputWindowInformation inputWindowInfo;
         public InputType type;
         public PatternType.SfxInformation sfxInfo;
-        public ActionableBeat(float actionBeat, float actionWindow, InputType type, PatternType.SfxInformation sfxInfo)
+        public ActionableBeat(float actionBeat, PatternType.InputWindowInformation inputInfo, InputType type, PatternType.SfxInformation sfxInfo)
         {
             this.actionBeat = actionBeat; 
-            this.actionWindow = actionWindow;
+            this.inputWindowInfo = inputInfo;
             this.type = type;
             this.sfxInfo = sfxInfo;
         }
@@ -71,7 +73,7 @@ public class PatternManager : MonoBehaviour
                     float nextBeatOnHit = map.BeatList[beatIndex].activationBeat + patternInfo.beatsUntilHit;
                     Debug.Log("Ready or not here I come in " + patternInfo.beatsUntilHit + "beats! ");
                     whenToInputList.Add(new(nextBeatOnHit
-                        , patternInfo.inputWindow
+                        , patternInfo.inputWindowInfo
                         , patternInfo.triggerInput
                         , patternInfo.sfxInfo));
                     whenToInputList = whenToInputList.OrderBy(o => o.actionBeat).ToList() ;
@@ -85,8 +87,9 @@ public class PatternManager : MonoBehaviour
             }
             if (whenToInputList.Count > 0)
             {
-                if ((conductor.CurrentBeat - whenToInputList[0].actionBeat) >= whenToInputList[0].actionWindow)
+                if ((conductor.CurrentBeat - whenToInputList[0].actionBeat) >= whenToInputList[0].inputWindowInfo.InputWindow)
                 {
+                    scoreObserver.InputScore(ScoreType.Miss);
                     Debug.Log("Ooooh I missed!");
                     audioManager.PlaySFX(whenToInputList[0].sfxInfo.sfxOnMiss);
                     whenToInputList.RemoveAt(0);
@@ -99,22 +102,37 @@ public class PatternManager : MonoBehaviour
         if (whenToInputList.Count > 0)
         {
             float reminder = Math.Abs(conductor.CurrentBeat - whenToInputList[0].actionBeat);
-            if (reminder < whenToInputList[0].actionWindow)
+            PatternType.InputWindowInformation windowInfo = whenToInputList[0].inputWindowInfo;
+            if (reminder <= windowInfo.InputWindow)
             {
                 if (type != whenToInputList[0].type)
                 {
                     Debug.Log("Missed input!!");
                     return;
                 }
-                if (reminder < whenToInputList[0].actionWindow / 2)
+                if (reminder <= windowInfo.PerfectWindow)
                 {
+                    scoreObserver.InputScore(ScoreType.Perfect);
                     audioManager.PlaySFX(whenToInputList[0].sfxInfo.sfxOnPerfect);
                     Debug.Log("Poifect!");
                 }
-                else
+                else if (reminder <= windowInfo.GoodWindow)
                 {
+                    scoreObserver.InputScore(ScoreType.Good);
                     audioManager.PlaySFX(whenToInputList[0].sfxInfo.sfxOnGood);
                     Debug.Log("Aight!");
+                }
+                else if (reminder <= windowInfo.MehWindow)
+                {
+                    scoreObserver.InputScore(ScoreType.Meh);
+                    audioManager.PlaySFX(whenToInputList[0].sfxInfo.sfxOnMeh);
+                    Debug.Log("Meh!");
+                }
+                else
+                {
+                    scoreObserver.InputScore(ScoreType.Poor);
+                    audioManager.PlaySFX(whenToInputList[0].sfxInfo.sfxOnMeh);
+                    Debug.Log("Poor!");
                 }
                 whenToInputList.RemoveAt(0);
                 return;

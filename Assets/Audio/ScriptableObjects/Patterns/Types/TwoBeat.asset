@@ -13,10 +13,15 @@ MonoBehaviour:
   m_Name: TwoBeat
   m_EditorClassIdentifier: 
   beatsUntilHit: 2
-  inputWindow: 0.5
   triggerInput: 0
+  inputWindowInfo:
+    inputWindow: 0.5
+    mehWindow: 0.5
+    goodWindow: 0.25
+    perfectWindow: 0.15
   sfxInfo:
     sfxOnTell: {fileID: 8300000, guid: 881ab1cdfec3c0f45bb9d37581d81900, type: 3}
     sfxOnPerfect: {fileID: 8300000, guid: c60c3b48a0d481f40ae4cdeb1ace5ea8, type: 3}
     sfxOnGood: {fileID: 8300000, guid: 93f068493e617cc42b11709eca8d5bc4, type: 3}
+    sfxOnMeh: {fileID: 0}
     sfxOnMiss: {fileID: 8300000, guid: 6040d821afbef814793db4d8b1d38280, type: 3}
