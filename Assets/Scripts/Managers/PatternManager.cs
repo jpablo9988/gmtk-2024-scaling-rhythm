@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static InputObserver;
 
 public class PatternManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class PatternManager : MonoBehaviour
     private List<ActionableBeat> whenToInputList = new();
     [SerializeField]
     private ScoreObserver scoreObserver;
+    public static event Action<float> beatTelegraph;
 
     private struct ActionableBeat
     {
@@ -71,6 +73,7 @@ public class PatternManager : MonoBehaviour
                 {
                     PatternType patternInfo = map.BeatList[beatIndex].beatType;
                     float nextBeatOnHit = map.BeatList[beatIndex].activationBeat + patternInfo.beatsUntilHit;
+                    beatTelegraph?.Invoke(patternInfo.beatsUntilHit);
                     Debug.Log("Ready or not here I come in " + patternInfo.beatsUntilHit + "beats! ");
                     whenToInputList.Add(new(nextBeatOnHit
                         , patternInfo.inputWindowInfo
