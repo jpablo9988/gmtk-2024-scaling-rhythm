@@ -51,4 +51,8 @@ public class RhythmMap : ScriptableObject
         public PatternType beatType;
 
     };
+    public void SetWholeMapInfo(List<BeatInformation> list)
+    {
+        this.beatList = list;
+    }
 }

@@ -65,14 +65,16 @@ public class AudioManager : MonoBehaviour
             UtilitiesAudioMixer.SetVolume(musicMixer, musicMixerExposedParam,
                 PlayerSettings.preferedVolume);
             PlayTrack(track);
+            StartRhythmTracking(track);
             return;
         }
         if (!audioSource.isPlaying)
         {
             UtilitiesAudioMixer.SetVolume(musicMixer, musicMixerExposedParam, 0.0001f);
             PlayTrack(track);
+            StartRhythmTracking(track);
             StartCoroutine(UtilitiesAudioMixer.StartFade(musicMixer, musicMixerExposedParam,
-                fadeInDuration, vol, track, StartRhythmTracking));
+                fadeInDuration, vol));
         }
         else
         {

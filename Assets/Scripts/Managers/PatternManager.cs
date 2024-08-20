@@ -74,7 +74,6 @@ public class PatternManager : MonoBehaviour
                     PatternType patternInfo = map.BeatList[beatIndex].beatType;
                     float nextBeatOnHit = map.BeatList[beatIndex].activationBeat + patternInfo.beatsUntilHit;
                     beatTelegraph?.Invoke(patternInfo.beatsUntilHit);
-                    Debug.Log("Ready or not here I come in " + patternInfo.beatsUntilHit + "beats! ");
                     whenToInputList.Add(new(nextBeatOnHit
                         , patternInfo.inputWindowInfo
                         , patternInfo.triggerInput
@@ -110,6 +109,7 @@ public class PatternManager : MonoBehaviour
             {
                 if (type != whenToInputList[0].type)
                 {
+                    scoreObserver.InputScore(ScoreType.Other);
                     Debug.Log("Missed input!!");
                     return;
                 }
@@ -140,9 +140,11 @@ public class PatternManager : MonoBehaviour
                 whenToInputList.RemoveAt(0);
                 return;
             }
+            scoreObserver.InputScore(ScoreType.Other);
             Debug.Log("No input window!");
             return;
         }
         Debug.Log("No Pattern in sight!");
+        scoreObserver.InputScore(ScoreType.Other);
     }
 }

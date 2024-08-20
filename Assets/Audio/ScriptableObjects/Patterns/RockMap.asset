@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dca1b32a6b2ac4419ea02ff50a9203e, type: 3}
+  m_Name: RockMap
+  m_EditorClassIdentifier: 
+  sfx_TellPan: 0.8
+  sfx_ActionPan: -0.8
+  beatList:
+  - activationBeat: 4
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 8
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 11
+    beatType: {fileID: 11400000, guid: 6880f2fabeb191845a7c4b0dc7230de8, type: 2}
+  - activationBeat: 18
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 20
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 24
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 29
+    beatType: {fileID: 11400000, guid: 6880f2fabeb191845a7c4b0dc7230de8, type: 2}
+  - activationBeat: 32
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 36
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 38
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 40
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 44
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 48
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 50
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 53
+    beatType: {fileID: 11400000, guid: 6880f2fabeb191845a7c4b0dc7230de8, type: 2}
+  - activationBeat: 58
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 62
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 66
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 68
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 68.5
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 72
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 74
+    beatType: {fileID: 11400000, guid: 6880f2fabeb191845a7c4b0dc7230de8, type: 2}
+  - activationBeat: 75
+    beatType: {fileID: 11400000, guid: 6880f2fabeb191845a7c4b0dc7230de8, type: 2}
+  - activationBeat: 80
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 81
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 82
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 84
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 84.5
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 86
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 90
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 92
+    beatType: {fileID: 11400000, guid: 6880f2fabeb191845a7c4b0dc7230de8, type: 2}
+  - activationBeat: 92
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 95
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 100
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 104
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 107
+    beatType: {fileID: 11400000, guid: 6880f2fabeb191845a7c4b0dc7230de8, type: 2}
+  - activationBeat: 109
+    beatType: {fileID: 11400000, guid: 6880f2fabeb191845a7c4b0dc7230de8, type: 2}
+  - activationBeat: 111
+    beatType: {fileID: 11400000, guid: 6880f2fabeb191845a7c4b0dc7230de8, type: 2}
+  - activationBeat: 116
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 120
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 126
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 127
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 129
+    beatType: {fileID: 11400000, guid: 6880f2fabeb191845a7c4b0dc7230de8, type: 2}
+  - activationBeat: 131
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 131.5
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 134
+    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
+  - activationBeat: 136
+    beatType: {fileID: 11400000, guid: 6880f2fabeb191845a7c4b0dc7230de8, type: 2}

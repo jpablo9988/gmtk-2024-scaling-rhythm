@@ -7,19 +7,23 @@ public class ThrowerScript : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject rock;
     [SerializeField] private GameObject spawnPoint;
-    void Start()
+    [SerializeField] private Conductor conductor;
+    void OnEnable()
     {
         PatternManager.beatTelegraph += DoThrowAnimation;
     }
-
+    private void OnDisable()
+    {
+        PatternManager.beatTelegraph -= DoThrowAnimation;
+    }
     public void DoThrowAnimation(float beatType)
     {
         Debug.Log(beatType);
         animator.CrossFade("Throw", 0);
 
         GameObject newRock = Instantiate(rock, spawnPoint.transform.position, spawnPoint.transform.rotation);
-        Rigidbody2D rockRb = newRock.GetComponent<Rigidbody2D>();
-        rockRb.AddForce(new Vector2(-2.5f, 20), ForceMode2D.Impulse);
+        RockScript rockAnim = newRock.GetComponentInChildren<RockScript>();
+        rockAnim.InitiateRock(beatType, conductor);
         //no clue how this works
         /* if (beatType == 2)
         {

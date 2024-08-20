@@ -8,6 +8,7 @@ public enum ScoreType
     Good,
     Meh,
     Poor,
-    Miss
+    Miss,
+    Other
 }
 

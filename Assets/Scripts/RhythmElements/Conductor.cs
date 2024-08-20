@@ -46,6 +46,9 @@ public class Conductor : MonoBehaviour
 
     public float CurrentBeat { get { return _positionInBeatsLoop;  } private set { _positionInBeatsLoop = value; } }
     public float PositionInAnalog { get { return _positionInAnalog;  } private set { _positionInAnalog = value; } }
+
+    public float BPM { get { return this._localBPM; } private set { } }
+
     /// <summary>
     /// Set current audio source used by the scene for Rhythm Tracks. 
     /// </summary>

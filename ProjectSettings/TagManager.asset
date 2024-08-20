@@ -7,6 +7,7 @@ TagManager:
   - Rock
   - Hand
   - Floor
+  - Window
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Back
+    uniqueID: 86229453
+    locked: 0
+  - name: Middle
+    uniqueID: 3725696265
+    locked: 0
+  - name: Front
+    uniqueID: 2288495285
     locked: 0

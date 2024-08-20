@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56245f0a7d509d341b72b0262a9d8021, type: 3}
+  m_Name: FourBeat
+  m_EditorClassIdentifier: 
+  beatsUntilHit: 4
+  triggerInput: 0
+  inputWindowInfo:
+    inputWindow: 0.5
+    mehWindow: 0.5
+    goodWindow: 0.25
+    perfectWindow: 0.1
+  sfxInfo:
+    sfxOnTell: {fileID: 8300000, guid: 881ab1cdfec3c0f45bb9d37581d81900, type: 3}
+    sfxOnPerfect: {fileID: 8300000, guid: c60c3b48a0d481f40ae4cdeb1ace5ea8, type: 3}
+    sfxOnGood: {fileID: 8300000, guid: 93f068493e617cc42b11709eca8d5bc4, type: 3}
+    sfxOnMeh: {fileID: 0}
+    sfxOnMiss: {fileID: 8300000, guid: 6040d821afbef814793db4d8b1d38280, type: 3}

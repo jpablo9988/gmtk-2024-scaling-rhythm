@@ -19,9 +19,3 @@ MonoBehaviour:
     beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
   - activationBeat: 8.5
     beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
-  - activationBeat: 9
-    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
-  - activationBeat: 15
-    beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}
-  - activationBeat: 15.5
-    beatType: {fileID: 11400000, guid: 7c37b895cbe749c47a7307f21ffb5f4a, type: 2}

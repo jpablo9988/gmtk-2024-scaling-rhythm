@@ -5,19 +5,37 @@ using UnityEngine;
 public class CatcherScript : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    void Start()
+    void OnEnable()
     {
         ScoreObserver.OnPlayerInput += DoCatchAnimation;
+    }
+    private void OnDisable()
+    {
+        ScoreObserver.OnPlayerInput -= DoCatchAnimation;
+
     }
 
     private void DoCatchAnimation(ScoreType score)
     {
-        if (score == ScoreType.Perfect)
+        if ((int)score <= 2)
         {
-            animator.CrossFade("Catch", 0);
-        } else
-        {
-            animator.CrossFade("Miss", 0);
+            Debug.Log(score);
+            ScoreTally.AddToScore(score);
         }
+        if (score != ScoreType.Miss)
+        {
+            if (score == ScoreType.Poor || score == ScoreType.Other)
+            {
+                animator.CrossFade("Miss", 0);
+            }
+            else
+            {
+                animator.CrossFade("Catch", 0);
+            }
+        }
+    }
+    public void SetCatcherIdleSpeed(float speed)
+    {
+        animator.SetFloat("speed", speed);
     }
 }
