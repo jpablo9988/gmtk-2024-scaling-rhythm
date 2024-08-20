@@ -30,15 +30,15 @@ public class PatternScript : MonoBehaviour
     {
         if ((int)score <= 2 && isInWindow)
         {
-            Debug.Log("Enter here!");
             isInWindow = false;
             ScoreTally.AddToScore(score);
             this.spriteRenderer.enabled = false;
             currParticleSystem.Play();
             StartCoroutine(Timers.GenericTimer(deathParticleTimer, () =>
             {
+                Debug.Log("Enter here!");
                 currParticleSystem.Stop();
-                Destroy(this.gameObject);
+                Destroy(gameObject);
             }));
         }
     }
