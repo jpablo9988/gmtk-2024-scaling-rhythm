@@ -11,10 +11,8 @@ public class PatternManager : MonoBehaviour
     private AudioManager audioManager;
     private Conductor conductor;
     [Header("Music Trackers. ")]
-    [ReadOnly]
     [SerializeField]
     private bool isTracking;
-    [ReadOnly]
     [SerializeField]
     private int beatIndex;
     private List<ActionableBeat> whenToInputList = new();
@@ -92,7 +90,6 @@ public class PatternManager : MonoBehaviour
                 if ((conductor.CurrentBeat - whenToInputList[0].actionBeat) >= whenToInputList[0].inputWindowInfo.InputWindow)
                 {
                     scoreObserver.InputScore(ScoreType.Miss);
-                    Debug.Log("Ooooh I missed!");
                     audioManager.PlaySFX(whenToInputList[0].sfxInfo.sfxOnMiss);
                     whenToInputList.RemoveAt(0);
                 }
@@ -110,7 +107,6 @@ public class PatternManager : MonoBehaviour
                 if (type != whenToInputList[0].type)
                 {
                     scoreObserver.InputScore(ScoreType.Other);
-                    Debug.Log("Missed input!!");
                     return;
                 }
                 if (reminder <= windowInfo.PerfectWindow)

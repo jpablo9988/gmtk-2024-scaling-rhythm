@@ -12,29 +12,25 @@ public class Conductor : MonoBehaviour
     private PatternManager _patternManager;
     [Header("Music Trackers(ReadOnly)")]
     [Tooltip("The current position in seconds of a rhythm track. ")]
-    [ReadOnly]
     [SerializeField]
     private float _positionInSeconds;
     [Tooltip("The current position in beats of a rhythm track. Each beat is the equivalent of a quarter note in 4/4")]
-    [ReadOnly]
     [SerializeField]
     private float _totalPositionInBeats;
     [Tooltip("The current position in beats of a rhythm track tracking a loop. If it isn't loopable, it's equal to the total. ")]
-    [ReadOnly]
     [SerializeField]
     private float _positionInBeatsLoop;
     [Tooltip("The local beats per minute of a rhythm track. Can change in case of a tempo change. ")]
-    [ReadOnly]
     [SerializeField]
     private float _localBPM;
     [Tooltip("Current position of the track from 0 - 1. Accounts for loops. ")]
-    [ReadOnly]
     [SerializeField]
     private float _positionInAnalog;
     [Tooltip("Is the conductor currently tracking a rhythm track? ")]
-    [ReadOnly]
     [SerializeField]
     private bool _isTracking;
+    [SerializeField]
+    private ResultsMenu resultUI;
 
     private float _dspTime;
     private float _secondsPassedSinceUpdateLoop = 0;
@@ -78,10 +74,15 @@ public class Conductor : MonoBehaviour
     {
         if (_isTracking)
         {
-            if (!_source.isPlaying)
+            if (!_source.isPlaying && ScoreTally.TotalScore >= 10)
             {
                 _isTracking = false;
                 _patternManager.StopPlayableMap();
+                StartCoroutine(Timers.GenericTimer(2.0f, () =>
+                {
+                    this.resultUI.ComputeResults(_musicTrack);
+                }));
+                // the track is DONESE. 
                 return;
             }
             _positionInSeconds = (float)(AudioSettings.dspTime - _dspTime - _musicTrack.OffsetUntilStart);

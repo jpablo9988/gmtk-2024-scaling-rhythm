@@ -92,7 +92,7 @@ public class AudioManager : MonoBehaviour
     {
         if (clip != null)
         {
-            sfxManager.PlaySFX(clip, PlayerSettings.preferedVolume, pan);
+            sfxManager.PlaySFX(clip, PlayerSettings.sfxVolue, pan);
         }
     }
     private void PlayTrack(Track track)

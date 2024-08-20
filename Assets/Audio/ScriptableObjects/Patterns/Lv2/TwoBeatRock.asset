@@ -21,7 +21,7 @@ MonoBehaviour:
     perfectWindow: 0.1
   sfxInfo:
     sfxOnTell: {fileID: 8300000, guid: 881ab1cdfec3c0f45bb9d37581d81900, type: 3}
-    sfxOnPerfect: {fileID: 8300000, guid: c60c3b48a0d481f40ae4cdeb1ace5ea8, type: 3}
-    sfxOnGood: {fileID: 8300000, guid: 93f068493e617cc42b11709eca8d5bc4, type: 3}
-    sfxOnMeh: {fileID: 0}
+    sfxOnPerfect: {fileID: 8300000, guid: 29d69d8cac42973489d2b93cc7bcb582, type: 3}
+    sfxOnGood: {fileID: 8300000, guid: 8d06345867a0861478eab4486eb21e56, type: 3}
+    sfxOnMeh: {fileID: 8300000, guid: 85c39672397256b449026de93e3889b9, type: 3}
     sfxOnMiss: {fileID: 8300000, guid: 6040d821afbef814793db4d8b1d38280, type: 3}
