@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -268,8 +268,8 @@ TextureImporter:
       name: CatcherSprits_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 10
+        x: 1
+        y: 9
         width: 128
         height: 30
       alignment: 0
