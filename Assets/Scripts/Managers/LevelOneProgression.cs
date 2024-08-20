@@ -16,10 +16,12 @@ public class LevelOneProgression : MonoBehaviour
     [SerializeField]
     private int startingBeat;
     [SerializeField]
+    private PatternType beatType;
 
     private void Start()
     {
         ScoreTally.ResetScore();
+        BuildMap();
         _audioManager.PlayMusicTrack(rhythmTrack, true);
     }
     private void BuildMap()
@@ -27,14 +29,21 @@ public class LevelOneProgression : MonoBehaviour
         List<RhythmMap.BeatInformation> beatsToAdd = new();
         int rangeIndex = 0;
         int nextThreeCounter = 0;
-        int newStartingBeatCounter = startingBeat;
+        int extraDuts = 0;
+        float newStartingBeatCounter = startingBeat;
+        for(int i = 0; i < rangesWhereTriple.Count; i++)
+        {
+            rangesWhereTriple[i] = rangesWhereTriple[i] - (this.startingBeat + 4) + extraDuts;
+            extraDuts++;
+        }
+        noPatterns += extraDuts;
         for (int i = 0; i < noPatterns; i++)
         {
             if (rangeIndex < rangesWhereTriple.Count)
             {
                 if (rangesWhereTriple[rangeIndex] == i)
                 {
-                    nextThreeCounter = 3;
+                    nextThreeCounter = 2;
                     rangeIndex++;
                 }
             }
@@ -43,7 +52,19 @@ public class LevelOneProgression : MonoBehaviour
                 RhythmMap.BeatInformation aux = new();
                 newStartingBeatCounter += 1;
                 aux.activationBeat = newStartingBeatCounter;
+                aux.beatType = this.beatType;
+                beatsToAdd.Add(aux);
+            }
+            else
+            {
+                RhythmMap.BeatInformation aux = new();
+                newStartingBeatCounter += 0.5f;
+                aux.activationBeat = newStartingBeatCounter;
+                aux.beatType = this.beatType;
+                nextThreeCounter--;
+                beatsToAdd.Add(aux);
             }
         }
+        this.rhythmTrack.Map.SetWholeMapInfo(beatsToAdd);
     }
 }
