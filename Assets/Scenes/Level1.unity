@@ -2036,6 +2036,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 743304305474327539, guid: 71b73878bc8f2e244b6da0c6eb7acdbc, type: 3}
+      propertyPath: resultsQuotes.Array.data[0]
+      value: Soon and you'll take over the whole world with your bigness!
+      objectReference: {fileID: 0}
+    - target: {fileID: 743304305474327539, guid: 71b73878bc8f2e244b6da0c6eb7acdbc, type: 3}
+      propertyPath: resultsQuotes.Array.data[1]
+      value: Getting chunky. Microscopic life ain't for you!
+      objectReference: {fileID: 0}
+    - target: {fileID: 743304305474327539, guid: 71b73878bc8f2e244b6da0c6eb7acdbc, type: 3}
+      propertyPath: resultsQuotes.Array.data[2]
+      value: Remember to press <Z> or Right click to the beat!
+      objectReference: {fileID: 0}
     - target: {fileID: 2300722739979461041, guid: 71b73878bc8f2e244b6da0c6eb7acdbc, type: 3}
       propertyPath: m_Name
       value: Canvas
