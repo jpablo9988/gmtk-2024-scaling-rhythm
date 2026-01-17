@@ -22,7 +22,7 @@ Dool - Art
 
 Gargantus - Code
 
-Jay~Pxls - Code
+JPxls/Juan Pablo Amorocho - Code
 
 Goose - Music
 
