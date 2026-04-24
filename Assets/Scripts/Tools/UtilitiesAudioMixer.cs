@@ -8,7 +8,7 @@ public static class UtilitiesAudioMixer
 {
     public static void SetVolume(AudioMixer mixer, string exposedParam, float targetVolume)
     {
-        float parametrizedVolume = Mathf.Log10(targetVolume) * 20;
+        float parametrizedVolume = Mathf.Log10(Mathf.Clamp(targetVolume, 0.0001f, 1)) * 20;
         mixer.SetFloat(exposedParam, parametrizedVolume);
     }
     public static IEnumerator StartFade(AudioMixer audioMixer, string exposedParam,

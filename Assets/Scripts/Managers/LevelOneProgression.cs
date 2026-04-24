@@ -1,14 +1,15 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using JPA_DialogueSystem;
+using JPA_DialogueSystem.Utils;
 using UnityEngine;
+using UnityEngine.Playables;
 
-public class LevelOneProgression : MonoBehaviour
+public class LevelOneProgression : ILevelProgressor
 {
     [SerializeField]
     private AudioManager _audioManager;
-    [SerializeField]
-    private RhythmTrack rhythmTrack;
     [SerializeField]
     private List<int> rangesWhereTriple;
     [SerializeField]
@@ -17,21 +18,19 @@ public class LevelOneProgression : MonoBehaviour
     private int startingBeat;
     [SerializeField]
     private PatternType beatType;
-
-    private void Start()
-    {
-        ScoreTally.ResetScore();
-        BuildMap();
-        _audioManager.PlayMusicTrack(rhythmTrack, true);
-    }
-    private void BuildMap()
+    [Header("Dependencies when no tutorial plays")]
+    public GameObject beatLines;
+    public BGMovementManagerLv1 backgroundMover;
+    public List<ParticleSystem> bubbles = new();
+    public PlayableDirector noTutorialDirector;
+    private void BuildMap(RhythmTrack track)
     {
         List<RhythmMap.BeatInformation> beatsToAdd = new();
         int rangeIndex = 0;
         int nextThreeCounter = 0;
         int extraDuts = 0;
         float newStartingBeatCounter = startingBeat;
-        for(int i = 0; i < rangesWhereTriple.Count; i++)
+        for (int i = 0; i < rangesWhereTriple.Count; i++)
         {
             rangesWhereTriple[i] = rangesWhereTriple[i] - (this.startingBeat + 4) + extraDuts;
             extraDuts++;
@@ -65,6 +64,65 @@ public class LevelOneProgression : MonoBehaviour
                 beatsToAdd.Add(aux);
             }
         }
-        this.rhythmTrack.Map.SetWholeMapInfo(beatsToAdd);
+        track.Map.SetWholeMapInfo(beatsToAdd);
+    }
+    private bool isPlayingCutscene = false;
+    public override void StartRhythmTrack(RhythmTrack rhythmTrack, PatternManager patternManager, bool trackScore, Track introTrack = null, PlayableDirector cinematicIntro = null, bool playedTutorial = false)
+    {
+        if (!playedTutorial)
+        {
+            isPlayingCutscene = true;
+            noTutorialDirector.Play();
+            StartCoroutine(Timers.GenericTimer((float)noTutorialDirector.duration, () =>
+            {
+                StartRhythmTrack(rhythmTrack, patternManager, trackScore, introTrack, cinematicIntro, true);
+                Camera.main.orthographicSize = 5f;
+                isPlayingCutscene = false;
+            }));
+            return;
+        }
+        if (cinematicIntro != null)
+        {
+            cinematicIntro.Play();
+        }
+        backgroundMover.enabled = true;
+        beatLines.SetActive(true);
+        bubbles.ToList().ForEach(i => i.Play());
+        ScoreTally.ResetScore();
+        if (!introTrack)
+        {
+            _audioManager.PlayMusicTrack(rhythmTrack, true, patternManager);
+            return;
+        }
+        _audioManager.PlayMusicTrack(introTrack, true);
+        StartCoroutine(Timers.GenericTimer(introTrack.MusicClip.length, () =>
+        {
+            _audioManager.PlayMusicTrack(rhythmTrack, true, patternManager);
+        }));
+    }
+
+    public override void StartTrack(Track track)
+    {
+        _audioManager.PlayMusicTrack(track, true);
+    }
+    public override void Pause(bool isPaused)
+    {
+        base.Pause(isPaused);
+        if (isPlayingCutscene)
+        {
+            if (isPaused)
+            {
+                noTutorialDirector.Pause();
+            }
+            else
+            {
+                noTutorialDirector.Resume();
+            }
+        }
+    }
+
+    public override void LoadRelevantAssets(RhythmTrack rhythmTrack)
+    {
+        BuildMap(rhythmTrack);
     }
 }

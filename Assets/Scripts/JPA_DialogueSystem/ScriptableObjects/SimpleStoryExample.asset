@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada4465eb1394f546aeeb47b4168684e, type: 3}
+  m_Name: SimpleStoryExample
+  m_EditorClassIdentifier: 
+  _name: IntroductionStory
+  _isInteractable: 1
+  _lines:
+  - name: ???
+    sentence: Hello... are you there?
+    modifiers:
+    - type: 1
+      value: 0.02
+      triggerOrder: 0
+    - type: 3
+      value: 1
+      triggerOrder: 1
+  - name: IAIA
+    sentence: 'I''m your ISS Artificial Intelligence Assistant. You can call me IAIA. '
+    modifiers: []
+  - name: IAIA
+    sentence: This station has been compromised. Our connection to the NASA Mission
+      Control Center at Houston has been severed.
+    modifiers:
+    - type: 3
+      value: 0.5
+      triggerOrder: 4
+  - name: IAIA
+    sentence: As you're currently the only astronaut on board... and alive in my
+      records, I implore you to follow my instructions guided by the ISS Security
+      Protocol.
+    modifiers: []
+  - name: IAIA
+    sentence: 'I need you to get to the front control panel at the other side of
+      the station. Once you''re there you will recieve further instructions.  '
+    modifiers: []
+  - name: IAIA
+    sentence: One last thing; Please be advised, the new SpaceX Security Module installed
+      has been malfunctioning. Please avoid or terminate these security drones if
+      encountered.
+    modifiers: []
+  - name: IAIA
+    sentence: They have been reprogrammed to perceieve any living beings as enemies.
+    modifiers: []
+  - name: IAIA
+    sentence: Oh, and, to control your Astronaut Jetpack, please switch to Control
+      Mode (T) (if on XR Simulator)...
+    modifiers: []
+  - name: IAIA
+    sentence: And proceed to move with (WASD) and rotate with (IJKL).
+    modifiers: []
+  - name: IAIA
+    sentence: Finally, to Interact and Grab objects, press (G). Good luck!
+    modifiers: []

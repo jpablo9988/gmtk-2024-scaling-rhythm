@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dca1b32a6b2ac4419ea02ff50a9203e, type: 3}
   m_Name: RockMap
   m_EditorClassIdentifier: 
-  sfx_TellPan: 0.8
-  sfx_ActionPan: -0.8
+  sfx_TellPan: 0.38
+  sfx_ActionPan: -0.38
   beatList:
   - activationBeat: 4
     beatType: {fileID: 11400000, guid: 29678b998950a8f40a9610b7d1dc2549, type: 2}

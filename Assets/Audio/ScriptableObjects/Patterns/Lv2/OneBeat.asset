@@ -16,8 +16,8 @@ MonoBehaviour:
   triggerInput: 0
   inputWindowInfo:
     inputWindow: 0.5
-    mehWindow: 0.5
-    goodWindow: 0.25
+    mehWindow: 0.3
+    goodWindow: 0.2
     perfectWindow: 0.1
   sfxInfo:
     sfxOnTell: {fileID: 8300000, guid: 881ab1cdfec3c0f45bb9d37581d81900, type: 3}

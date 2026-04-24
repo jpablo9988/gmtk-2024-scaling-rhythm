@@ -8,6 +8,8 @@ TagManager:
   - Hand
   - Floor
   - Window
+  - Destructor
+  - UI
   layers:
   - Default
   - TransparentFX

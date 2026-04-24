@@ -15,13 +15,355 @@ MonoBehaviour:
   sfx_TellPan: 0
   sfx_ActionPan: 0
   beatList:
-  - activationBeat: 2
+  - activationBeat: 12
     beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
-  - activationBeat: 3
+  - activationBeat: 13
     beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
-  - activationBeat: 4
+  - activationBeat: 14
     beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
-  - activationBeat: 5
+  - activationBeat: 15
     beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
-  - activationBeat: 6
+  - activationBeat: 16
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 17
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 18
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 19
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 20
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 21
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 22
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 23
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 24
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 24.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 25
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 26
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 26.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 27
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 28
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 29
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 30
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 31
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 32
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 32.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 33
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 34
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 35
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 36
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 36.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 37
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 38
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 39
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 40
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 41
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 42
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 42.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 43
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 44
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 45
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 45.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 46
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 47
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 48
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 49
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 50
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 50.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 51
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 52
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 52.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 53
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 54
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 54.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 55
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 56
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 57
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 58
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 59
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 60
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 61
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 62
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 62.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 63
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 64
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 64.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 65
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 66
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 67
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 68
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 69
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 70
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 71
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 72
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 73
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 74
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 74.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 75
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 76
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 77
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 78
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 79
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 80
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 81
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 82
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 82.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 83
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 84
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 85
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 86
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 87
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 88
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 89
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 89.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 90
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 91
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 91.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 92
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 93
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 94
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 94.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 95
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 96
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 97
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 98
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 98.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 99
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 100
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 100.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 101
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 102
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 102.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 103
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 104
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 105
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 106
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 106.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 107
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 108
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 109
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 110
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 110.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 111
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 112
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 113
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 114
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 114.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 115
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 116
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 116.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 117
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 118
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 118.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 119
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 120
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 120.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 121
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 122
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 123
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 124
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 125
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 126
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 127
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 128
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 129
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 129.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 130
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 131
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 132
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 132.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 133
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 134
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 134.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 135
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 136
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 136.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 137
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 138
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 139
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 139.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 140
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 141
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 142
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 143
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 144
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 145
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 146
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 147
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 148
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 149
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 150
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 151
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 152
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 152.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 153
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 154
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 154.5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 155
     beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}

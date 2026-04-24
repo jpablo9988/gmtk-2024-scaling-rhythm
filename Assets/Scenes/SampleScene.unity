@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -153,8 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioManager: {fileID: 632502475}
-  musicTrack: {fileID: 11400000, guid: bbc06b625c56a9d4fb49dc5843df4036, type: 2}
-  rhythmTrack: {fileID: 11400000, guid: 0e8ab367c8b82d6438efdcae4872ec4c, type: 2}
+  catcher: {fileID: 0}
 --- !u!4 &334774658
 Transform:
   m_ObjectHideFlags: 0
@@ -320,7 +318,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   b1_Name: Button1
-  b2_Name: Button2
   observer: {fileID: 553773508}
 --- !u!1 &632502472
 GameObject:
@@ -523,6 +520,7 @@ MonoBehaviour:
   _localBPM: 0
   _positionInAnalog: 0
   _isTracking: 0
+  resultUI: {fileID: 0}
 --- !u!1 &1423126563
 GameObject:
   m_ObjectHideFlags: 0

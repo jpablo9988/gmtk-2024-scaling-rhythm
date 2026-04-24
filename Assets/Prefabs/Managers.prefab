@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c887cfb21e6e50418e3565c4876c5ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentControlSchema: 0
 --- !u!114 &4412298200802836379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,7 +59,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   b1_Name: Button1
-  b2_Name: Button2
+  b2_name: Button2
+  escape_name: Cancel
   observer: {fileID: 4595590186049752565}
 --- !u!1 &2070051064573264382
 GameObject:
@@ -207,7 +209,11 @@ MonoBehaviour:
   conductor: {fileID: 6032127971146974349}
   sfxManager: {fileID: 8761529757068685283}
   musicMixer: {fileID: 24100000, guid: cb68b1ab51cb12442a70162bd289adf7, type: 2}
+  sfxMixer: {fileID: 24100000, guid: cb68b1ab51cb12442a70162bd289adf7, type: 2}
+  allMixer: {fileID: 24100000, guid: cb68b1ab51cb12442a70162bd289adf7, type: 2}
   musicMixerExposedParam: volRhythmTracks
+  sfxMixerExposedParam: volSFXTracks
+  allMixerExposedParam: volAllTracks
   fadeOutDuration: 0.4
   fadeInDuration: 0.4
 --- !u!1 &2312934289854573158
@@ -383,6 +389,7 @@ Transform:
   - {fileID: 8638376091796736067}
   - {fileID: 5643571043284383874}
   - {fileID: 2493372826800898255}
+  - {fileID: 5768832982840088743}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3422948131264434468
@@ -436,6 +443,80 @@ MonoBehaviour:
   _localBPM: 0
   _positionInAnalog: 0
   _isTracking: 0
+  resultUI: {fileID: 0}
+--- !u!1 &5115242701527335387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5768832982840088743}
+  - component: {fileID: 2851178496747346444}
+  - component: {fileID: 8973122225044033944}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5768832982840088743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115242701527335387}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 854999354981221149}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2851178496747346444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115242701527335387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe851b9558b2ad4c8a5779511676c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainTrack: {fileID: 11400000, guid: a0f9b148e1f575847a7076e24d17f2fd, type: 2}
+  introTrack: {fileID: 0}
+  resultsMenu: {fileID: 0}
+  patternManager: {fileID: 0}
+  levelProgressor: {fileID: 0}
+  endMusicManager: {fileID: 0}
+  dialogueManager: {fileID: 0}
+  inputObserver: {fileID: 0}
+  cinematicIntro: {fileID: 0}
+  tutorialManager: {fileID: 0}
+  WillPlayTutorial: 0
+--- !u!114 &8973122225044033944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115242701527335387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3bc342b10fd3c54da0c50c18aec83e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resultsTrack: {fileID: 11400000, guid: 064867963a4e7fc469aff9dcf9509278, type: 2}
+  perfectJingle: {fileID: 11400000, guid: bcafc101085824e4e9968066b67cdb29, type: 2}
+  goodJingle: {fileID: 11400000, guid: 2fe8637d8355f014abbe1349c8b6d270, type: 2}
+  ehJingle: {fileID: 11400000, guid: 2a0a7212e77b8854b9322aa6f0a0debc, type: 2}
+  poorJingle: {fileID: 11400000, guid: cbd5b28faefe2f644a439f3242c1f8f1, type: 2}
 --- !u!1 &5896646095468759401
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437a2156025ed324d89e66a57fd9a23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recievingSchema: 2
   isTracking: 0
   beatIndex: 0
   scoreObserver: {fileID: 8201933336245304731}

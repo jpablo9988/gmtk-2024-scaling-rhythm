@@ -17,7 +17,12 @@ public class Track : ScriptableObject
     [Tooltip("Will the track loop? ")]
     [SerializeField]
     private bool isLoopable;
+    [SerializeField]
+    [Range(0.01f, 3f)]
+    private float pitch = 1.0f;
+
 
     public AudioClip MusicClip { get { return musicClip; } private set { musicClip = value; } }
     public bool IsLoopable { get { return isLoopable; } private set { isLoopable = value; } }
+    public float Pitch => pitch;
 }

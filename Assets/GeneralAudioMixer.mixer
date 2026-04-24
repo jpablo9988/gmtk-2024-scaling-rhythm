@@ -63,8 +63,12 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: f1585115c73620b41b83ba19a9f8985c
+    name: volAllTracks
   - guid: f337287b9b916864ca24c2a77cddf250
     name: volRhythmTracks
+  - guid: 0a50c5ebaee6b7941a8052ba15ea1236
+    name: volSFXTracks
   m_AudioMixerGroupViews:
   - guids:
     - f01696f9ff4c250468af6e2c0495ab35
@@ -118,7 +122,10 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: bae59c37b64790544a47bafaa350d23c
   m_FloatValues:
+    f1585115c73620b41b83ba19a9f8985c: 0
     f337287b9b916864ca24c2a77cddf250: 0
+    0a50c5ebaee6b7941a8052ba15ea1236: -1.3
+    26816c2c5b1c8f244a00b152d53585d8: 1
   m_TransitionOverrides: {}
 --- !u!243 &4732742413934425511
 AudioMixerGroupController:

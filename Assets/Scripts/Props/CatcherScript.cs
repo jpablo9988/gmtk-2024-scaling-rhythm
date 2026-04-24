@@ -2,24 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CatcherScript : MonoBehaviour
+public class CatcherScript : IPausable
 {
     [SerializeField] private Animator animator;
-    void OnEnable()
+    protected override void OnEnable()
     {
-        ScoreObserver.OnPlayerInput += DoCatchAnimation;
+        base.OnEnable();
+        ScoreObserver.OnGainScore += DoCatchAnimation;
     }
-    private void OnDisable()
+    protected override void OnDisable()
     {
-        ScoreObserver.OnPlayerInput -= DoCatchAnimation;
-
+        base.OnDisable();
+        ScoreObserver.OnGainScore -= DoCatchAnimation;
     }
 
     private void DoCatchAnimation(ScoreType score)
     {
         if ((int)score <= 2)
         {
-            Debug.Log(score);
             ScoreTally.AddToScore(score);
         }
         if (score != ScoreType.Miss)
@@ -34,8 +34,16 @@ public class CatcherScript : MonoBehaviour
             }
         }
     }
+    private float currentCatchedIdleSpeed = 0f;
     public void SetCatcherIdleSpeed(float speed)
     {
-        animator.SetFloat("speed", speed);
+        currentCatchedIdleSpeed = speed;
+        animator.SetFloat("speed", currentCatchedIdleSpeed);
     }
+    public override void Pause(bool isPaused)
+    {
+        if (isPaused) animator.SetFloat("speed", 0f);
+        else animator.SetFloat("speed", currentCatchedIdleSpeed);
+    }
+
 }

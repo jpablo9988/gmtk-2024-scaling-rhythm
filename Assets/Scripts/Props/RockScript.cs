@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class RockScript : MonoBehaviour
@@ -12,30 +13,59 @@ public class RockScript : MonoBehaviour
     [SerializeField] private bool touchingHand = false;
     [SerializeField] private bool catched;
     [SerializeField] private SpriteRenderer sprRenderer;
-    [SerializeField] private Animator animator;
+    [SerializeField] private SyncedAnimation animator;
+    [SerializeField] private SpriteRotator spriteRotator;
+    [SerializeField]
+    private ObjectDestroyer objectDestroyer;
+
+
+    public CinemachineSmoothPath RockPath;
+    public CinemachineSmoothPath FailPath;
+
     private void OnEnable()
     {
-        ScoreObserver.OnPlayerInput += GetCatched;
+        ScoreObserver.OnGainScore += GetCatched;
+        animator.animationEnd.AddListener(OnAnimationEnd);
     }
 
     private void OnDisable()
     {
-        ScoreObserver.OnPlayerInput -= GetCatched;
-
+        ScoreObserver.OnGainScore -= GetCatched;
+        animator.animationEnd.RemoveListener(OnAnimationEnd);
+    }
+    private void OnAnimationEnd(SyncedAnimation.OnEnd_Package package)
+    {
+        if (package.source != animator) return;
+        if (package.path == RockPath && !catched)
+        {
+            package.source.PlayAnimation(FailPath, 0.5f);
+        }
+        else if (package.path == FailPath && !catched)
+        {
+            sprRenderer.color = Color.red;
+            SwitchToPhysicsBasedMovement();
+            objectDestroyer.DestroyObject(true);
+        }
     }
     private void GetCatched(ScoreType score)
     {
-        if ((int)score <= 2)
+        if ((int)score <= 1)
         {
             if (!catched && touchingHand)
             {
-                rb.velocity = Vector2.zero;
-                rb.constraints = RigidbodyConstraints2D.FreezePositionX;
                 catched = true;
-                rb.isKinematic = false;
-                animator.SetTrigger("Stay");            
+                SwitchToPhysicsBasedMovement();
+
             }
         }
+    }
+    private void SwitchToPhysicsBasedMovement()
+    {
+        rb.velocity = Vector2.zero;
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+        rb.isKinematic = false;
+        if (spriteRotator) spriteRotator.enabled = false;
+        animator.PlayAnimation(null, 1.0f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,9 +82,13 @@ public class RockScript : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Rock") && catched)
         {
-           currCollider.isTrigger = true;
-           rb.isKinematic = true;
-           rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezePositionX;
+            currCollider.isTrigger = true;
+            rb.isKinematic = true;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezePositionX;
+        }
+        if (collision.gameObject.CompareTag("Destructor"))
+        {
+            objectDestroyer.DestroyObject(true);
         }
     }
     public void InitiateRock(float beatType, Conductor conductor)
@@ -68,9 +102,8 @@ public class RockScript : MonoBehaviour
                 sprRenderer.sprite = bigRockSprites[Random.Range(0, bigRockSprites.Length)];
                 break;
         }
-
-        float animSpeed = (conductor.BPM / 60) * (1 / beatType);
-        animator.SetFloat("throwSpeed", animSpeed);
-        animator.Play("RockParabolla");
+        //beatType (in Seconds) times the time it takes to finish a bar in the current song
+        animator.PlayAnimation(RockPath, beatType * (1 / (conductor.BPM / 60)), SyncedAnimation.SyncedMovementType.Parabola);
+        catched = false;
     }
 }
