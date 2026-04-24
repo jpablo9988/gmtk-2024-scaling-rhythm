@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 /// <summary>
@@ -37,13 +38,30 @@ public class Conductor : MonoBehaviour
     private float _localBPS;
     private int _completedLoops = 0;
     private float _beatsPerLoop = 0;
+    private bool _isPaused = false;
     private AudioSource _source;
     private RhythmTrack _musicTrack;
 
-    public float CurrentBeat { get { return _positionInBeatsLoop;  } private set { _positionInBeatsLoop = value; } }
-    public float PositionInAnalog { get { return _positionInAnalog;  } private set { _positionInAnalog = value; } }
+    public float CurrentBeat { get { return _positionInBeatsLoop; } private set { _positionInBeatsLoop = value; } }
+    public float PositionInAnalog { get { return _positionInAnalog; } private set { _positionInAnalog = value; } }
+    public float PositionInSeconds => _positionInSeconds;
+    public float PositionInSample => _source.time;
+    public float PositionInSampleDst => _source.timeSamples;
+    public int CompletedLoops => _completedLoops;
 
     public float BPM { get { return this._localBPM; } private set { } }
+    public float BPS
+    {
+        get
+        {
+            return this._localBPS;
+        }
+    }
+
+    public delegate void OnTrackDo(RhythmTrack track);
+    public static event OnTrackDo TrackEnd;
+    public static event OnTrackDo TrackReset;
+
 
     /// <summary>
     /// Set current audio source used by the scene for Rhythm Tracks. 
@@ -57,48 +75,80 @@ public class Conductor : MonoBehaviour
     /// Start tracking a Rhythm Track.
     /// </summary>
     /// <param name="musicTrack"></param>
-    public void ConductMusicTrack(AudioManager manager, RhythmTrack musicTrack)
+    public void ConductMusicTrack(RhythmTrack musicTrack)
     {
         // --- reset variables to default ! ---- //
-        _dspTime = (float)AudioSettings.dspTime;
+        _dspTime = (float)_source.time;
         _totalPositionInBeats = 0;
+        _positionInBeatsLoop = 0;
+        _positionInAnalog = 0;
+        _positionInSeconds = 0;
+        _completedLoops = 0;
+        _secondsPassedSinceUpdateLoop = 0;
         _localBPM = musicTrack.BPM;
         _localBPS = 60f / _localBPM;
         _beatsPerLoop = musicTrack.BPM * (musicTrack.MusicClip.length / 60);
         this._musicTrack = musicTrack;
         // --- set input pattern map: ---- //
-        _patternManager.SetPlayableMap(this, manager, musicTrack.Map);
         _isTracking = true;
+        _isPaused = false;
+    }
+    public void StopCurrentTrack()
+    {
+        _source.Stop();
+        _isTracking = false;
+        _isPaused = false;
+    }
+    public void PauseCurrentTrack()
+    {
+        _source.Pause();
+        AudioListener.pause = true;
+        _isPaused = true;
+    }
+    public void ResumeCurrentTrack()
+    {
+        if (!_source) return;
+        if (!_isPaused) return;
+        AudioListener.pause = false;
+        _source.UnPause();
+        _isPaused = false;
     }
     private void Update()
     {
-        if (_isTracking)
+        if (_isTracking && !_isPaused)
         {
-            if (!_source.isPlaying && ScoreTally.TotalScore >= 10)
+            if (!_source.isPlaying && HasReachedEndOfTrack())
             {
-                _isTracking = false;
-                _patternManager.StopPlayableMap();
-                StartCoroutine(Timers.GenericTimer(2.0f, () =>
-                {
-                    this.resultUI.ComputeResults(_musicTrack);
-                }));
-                // the track is DONESE. 
+                if (!_musicTrack.IsLoopable)
+                    _isTracking = false;
+
+                TrackEnd?.Invoke(_musicTrack);
                 return;
             }
-            _positionInSeconds = (float)(AudioSettings.dspTime - _dspTime - _musicTrack.OffsetUntilStart);
+            _positionInSeconds = _source.time - _dspTime - _musicTrack.OffsetUntilStart;
             _totalPositionInBeats += (_positionInSeconds - _secondsPassedSinceUpdateLoop) / _localBPS;
             _secondsPassedSinceUpdateLoop = _positionInSeconds;
             //Calculations for Loops:
-            if (_totalPositionInBeats >= (_completedLoops + 1) * _beatsPerLoop && _musicTrack.IsLoopable)
+            if (HasReachedEndOfTrack() && _musicTrack.IsLoopable)
             {
-                _patternManager.ResetCurrentMap();
-                _completedLoops++;
+                //_completedLoops++;
                 _localBPM = _musicTrack.BPM;
+                TrackReset?.Invoke(_musicTrack);
+            }
+            else if (HasReachedEndOfTrack())
+            {
+                _isTracking = false;
+                TrackEnd?.Invoke(_musicTrack);
+                return;
             }
             if (_musicTrack.IsLoopable) _positionInBeatsLoop = _totalPositionInBeats - _completedLoops * _beatsPerLoop;
-            else _positionInBeatsLoop = _totalPositionInBeats; 
+            else _positionInBeatsLoop = _totalPositionInBeats;
             _positionInAnalog = _positionInBeatsLoop / _beatsPerLoop;
         }
     }
-
+    private bool HasReachedEndOfTrack()
+    {
+        return _positionInAnalog >= 0.99 && _totalPositionInBeats <= 1;
+    }
 }
+

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada4465eb1394f546aeeb47b4168684e, type: 3}
+  m_Name: Lv2_2
+  m_EditorClassIdentifier: 
+  _name: Level 2-2
+  _isInteractable: 1
+  _lines:
+  - name: Marc Brownie
+    sentence: I throw it...
+    modifiers:
+    - type: 1
+      value: 0.02
+      triggerOrder: 0
+  - name: Marc Brownie
+    sentence: You count in your head, 1 - 2...
+    modifiers: []
+  - name: Marc Brownie
+    sentence: 'And on three!, you grab it. '
+    modifiers:
+    - type: 3
+      value: 3
+      triggerOrder: 0.3
+  - name: Marc Brownie
+    sentence: 'It''s got a rhythm to it, you''ll catch up. '
+    modifiers: []

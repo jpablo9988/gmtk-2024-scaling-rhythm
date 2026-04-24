@@ -14,12 +14,11 @@ public class CellAnimator : MonoBehaviour
     [SerializeField] private Animator animator;
     void OnEnable()
     {
-        ScoreObserver.OnPlayerInput += DoEatAnimation;
+        ScoreObserver.OnGainScore += DoEatAnimation;
     }
     private void OnDisable()
     {
-        ScoreObserver.OnPlayerInput -= DoEatAnimation;
-
+        ScoreObserver.OnGainScore -= DoEatAnimation;
     }
     private void DoEatAnimation(ScoreType score)
     {
@@ -29,7 +28,7 @@ public class CellAnimator : MonoBehaviour
             int index = 0;
             foreach (int range in ranges)
             {
-                if (ScoreTally.TotalScore >= range)
+                if (ScoreTally.SessionScore >= range)
                 {
                     index++;
                 }

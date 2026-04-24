@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dca1b32a6b2ac4419ea02ff50a9203e, type: 3}
+  m_Name: Tutorial 1 Lv 1
+  m_EditorClassIdentifier: 
+  sfx_TellPan: 0
+  sfx_ActionPan: 0
+  beatList:
+  - activationBeat: 0
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 1
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 2
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 3
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 5
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 6
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 7
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 8
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 10
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 11
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 12
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 13
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 15
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 16
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 17
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 18
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 20
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 21
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 22
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 23
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 25
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 26
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 27
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}
+  - activationBeat: 28
+    beatType: {fileID: 11400000, guid: 0675cf4ff0509564facdc52b8773c721, type: 2}

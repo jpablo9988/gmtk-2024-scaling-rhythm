@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreObserver : MonoBehaviour
+public class ScoreObserver : IPausable
 {
     public delegate void EventWithScoreType(ScoreType type);
-    public static event EventWithScoreType OnPlayerInput;
+    public static event EventWithScoreType OnGainScore;
+
     public void InputScore(ScoreType type)
     {
-        OnPlayerInput?.Invoke(type);
+        if (!isGamePaused) OnGainScore?.Invoke(type);
     }
 }

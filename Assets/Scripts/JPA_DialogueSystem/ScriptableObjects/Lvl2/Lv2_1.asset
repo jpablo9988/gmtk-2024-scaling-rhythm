@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada4465eb1394f546aeeb47b4168684e, type: 3}
+  m_Name: Lv2_1
+  m_EditorClassIdentifier: 
+  _name: Level 2 - 1
+  _isInteractable: 1
+  _lines:
+  - name: ???
+    sentence: 'Hello. How''re you doing, pal? '
+    modifiers:
+    - type: 1
+      value: 0.02
+      triggerOrder: 0
+  - name: ???
+    sentence: 'I see you got my invitation. Thank you for meeting me here. '
+    modifiers: []
+  - name: Marc Brownie
+    sentence: 'I''m Marc, by the way. Marc Brownie.  '
+    modifiers: []
+  - name: Marc Brownie
+    sentence: 'Neat name, right? Very legally distinct. '
+    modifiers: []
+  - name: Marc Brownie
+    sentence: 'Well, you must be wondering, ''What''s up with those rocks you got
+      down there? '
+    modifiers: []
+  - name: Marc Brownie
+    sentence: 'You see, I''m building a rock pile. The BIGGEST rock pile. '
+    modifiers:
+    - type: 3
+      value: 0.3
+      triggerOrder: 9
+  - name: Marc Brownie
+    sentence: 'It''s my dream. Always been, always will be. '
+    modifiers: []
+  - name: Marc Brownie
+    sentence: 'Now, the question is, will you help me? '
+    modifiers: []
+  - name: Marc Brownie
+    sentence: '... judging by your silence, I''m guessing that''s a yes! '
+    modifiers:
+    - type: 3
+      value: 0.15
+      triggerOrder: 1
+  - name: Marc Brownie
+    sentence: 'Cool. I''m gonna be hurling rocks at you, and you''re gonna catch
+      ''em. '
+    modifiers: []
+  - name: Marc Brownie
+    sentence: 'We all know that''s the easiest way of building a big pile of rocks. '
+    modifiers: []
+  - name: Marc Brownie
+    sentence: ...Let me give you a demonstration, OK?
+    modifiers: []

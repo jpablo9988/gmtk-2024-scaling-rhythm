@@ -9,5 +9,6 @@ public enum InputType
 {
     Button1,
     Button2,
-    BothButtons
+    BothButtons,
+    Escape
 }

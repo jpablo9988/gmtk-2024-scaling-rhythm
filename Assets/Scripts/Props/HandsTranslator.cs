@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class HandsTranslator : MonoBehaviour
+public class HandsTranslator : IPausable
 {
     [SerializeField]
     private float moveAmount = 1.0f;
@@ -12,33 +13,51 @@ public class HandsTranslator : MonoBehaviour
     private float moveStarter = 4;
     [SerializeField]
     private float rockPerMove = 1;
-    void OnEnable()
+    [SerializeField]
+    private float rateZoomout = 3f;
+    public UnityEvent OnEndMovement;
+    protected override void OnEnable()
     {
-        ScoreObserver.OnPlayerInput += MoveUpwardsSmooth;
+        base.OnEnable();
+        ScoreObserver.OnGainScore += MoveUpwardsSmooth;
     }
-    private void OnDisable()
+    protected override void OnDisable()
     {
-        ScoreObserver.OnPlayerInput -= MoveUpwardsSmooth;
-
+        base.OnDisable();
+        ScoreObserver.OnGainScore -= MoveUpwardsSmooth;
     }
     public void MoveUpwardsSmooth(ScoreType type)
     {
-        if (ScoreTally.TotalScore >= moveStarter && (int)type <= 2)
+        if (!ScoreTally.IsTrackingScore) return;
+        if (ScoreTally.TotalScore >= moveStarter && (int)type <= (int)ScoreType.Good)
         {
             if (ScoreTally.TotalScore % rockPerMove == 0)
             {
-                Vector2 targetVector = new(transform.position.x, transform.position.y + moveAmount);
-                StartCoroutine(MoveTowardsTarget(targetVector));
+                MoveSmooth(transform.position.y + moveAmount);
             }
         }
+    }
+    public void MoveSmooth(float positionY)
+    {
+        Vector2 targetVector = new(transform.position.x, positionY);
+        StartCoroutine(MoveTowardsTarget(targetVector));
     }
 
     private IEnumerator MoveTowardsTarget(Vector2 target)
     {
-        while (!this.transform.position.Equals( target))
+        while (!this.transform.position.Equals(target))
         {
-            transform.position = Vector2.MoveTowards(this.transform.position, target, speed * Time.deltaTime);
-            yield return null;
+            if (isGamePaused)
+            {
+                yield return null;
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(this.transform.position, target, speed * Time.deltaTime);
+                Camera.main.orthographicSize += Time.deltaTime * rateZoomout;
+                yield return null;
+            }
         }
+        OnEndMovement?.Invoke();
     }
 }

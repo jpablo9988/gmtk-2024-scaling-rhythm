@@ -17,8 +17,9 @@ public class RhythmMap : ScriptableObject
     [Tooltip("Map")]
     [SerializeField]
     private List<BeatInformation> beatList;
-    public List<BeatInformation> BeatList 
-    { get { return beatList; } 
+    public List<BeatInformation> BeatList
+    {
+        get { return beatList; }
         private set
         {
             beatList = value;
@@ -29,7 +30,8 @@ public class RhythmMap : ScriptableObject
     /// <br></br>Item 1: Panning of the Tell
     /// <br></br>Item 2: Panning of the Action
     /// </summary>
-    public Tuple<float, float> PanningInfoSFX { 
+    public Tuple<float, float> PanningInfoSFX
+    {
         get
         {
             return new(sfx_TellPan, sfx_ActionPan);

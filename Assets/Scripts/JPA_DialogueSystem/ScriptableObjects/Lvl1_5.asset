@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ada4465eb1394f546aeeb47b4168684e, type: 3}
+  m_Name: Lvl1_5
+  m_EditorClassIdentifier: 
+  _name: Fifth
+  _isInteractable: 1
+  _lines:
+  - name: Cellular
+    sentence: Ey, you're like family to me now! Terrific job.
+    modifiers:
+    - type: 1
+      value: 0.02
+      triggerOrder: 0
+  - name: Cellular
+    sentence: 'Ey, wha''s that I spy with my non-existant eyes? '
+    modifiers: []
+  - name: Cellular
+    sentence: No. way. that's... a lotta food coming this way.
+    modifiers: []
+  - name: Cellular
+    sentence: Ey, now that's somethin' worth getting excited about!
+    modifiers: []
+  - name: Cellular
+    sentence: Arright, I'm leaving this onto your very capable hands.
+    modifiers: []
+  - name: Cellular
+    sentence: Look pretty now, you got dis!
+    modifiers: []
