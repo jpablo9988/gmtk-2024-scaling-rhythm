@@ -11,7 +11,7 @@ HOW TO PLAY
 
 - Microbe Munchin:  Click on the beat, And click an extra time when you see the one in between beats -
 
-- Rock Tosser: Click a Little bit after the tosser tosses, There is grunt but you might not be able to hear it -
+- Rock Tosser: Click a Little bit after the tosser tosses, it's a counting game to three or four!
 
 ---Team---
 
