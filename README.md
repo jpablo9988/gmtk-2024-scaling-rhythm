@@ -5,9 +5,6 @@ A Rhythm Heaven-esc Game about Scale!-
 
 2 Short rhythmic mini-games about growing Big!
 
-- Rhythm might not Sync well on first Web browser playthrough!-
-
-- To avoid that Lag, Playthrough it again or Download the Windows Build! -
 
 
 HOW TO PLAY
