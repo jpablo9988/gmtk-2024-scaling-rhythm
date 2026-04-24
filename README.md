@@ -29,6 +29,4 @@ Goose - Music
 https://team-tuna.itch.io/harmonic-scale
 
 KNOWN ISSUES:
-- Animations are lagged in the web version.
-- Pellets in level 1 are too small. They need better readability.
-- Missing a proper tutorial.
+- Lack of Data Persistance in both the WebGL Version and the Standalone Version.
