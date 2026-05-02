@@ -1,17 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioSliders : MonoBehaviour
 {
     [SerializeField]
     private AudioManager audioManager;
+    [SerializeField]
+    private Toggle fullScreenToggle;
     void Start()
     {
         if (audioManager == null)
         {
             audioManager = FindFirstObjectByType<AudioManager>();
         }
+        fullScreenToggle.enabled = Screen.fullScreen;
+    }
+    void OnEnable()
+    {
+        fullScreenToggle.enabled = Screen.fullScreen;
     }
     public void OnChangeVolume(VolumePackage package)
     {
