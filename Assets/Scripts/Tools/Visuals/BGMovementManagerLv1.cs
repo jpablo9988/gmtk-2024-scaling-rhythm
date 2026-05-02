@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BGMovementManagerLv1 : IPausable
 {
+    [SerializeField]
     private SpriteRenderer[] tiles;
     BGColumnMovementsLv1[] columnManagers;
     Transform trailingPosition;
@@ -28,6 +29,7 @@ public class BGMovementManagerLv1 : IPausable
         columnManagers = GetComponentsInChildren<BGColumnMovementsLv1>();
         //Size of sprite times the scale in x.
         horizontalSpriteSize = tiles[0].sprite.bounds.max.x * tiles[0].transform.localScale.x;
+        Debug.Log(horizontalSpriteSize);
         screenBoundPosition = SetInitialPosition(horizontalSpriteSize);
         FindInitialTrailingPosition(columnManagers, screenBoundPosition);
         PatternSpawner.OnReachedNewRange += StartRotationAnimationOnTiles;

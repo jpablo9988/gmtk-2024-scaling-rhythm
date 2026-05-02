@@ -36,7 +36,6 @@ public class BGColumnMovementsLv1 : IPausable
             childRenderers[index], newSprite,
         () =>
         {
-            Debug.Log(index++);
             TransitionToSprite(conductor, newSprite, index++);
         }));
     }
