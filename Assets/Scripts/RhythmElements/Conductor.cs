@@ -48,6 +48,7 @@ public class Conductor : MonoBehaviour
     public float PositionInSample => _source.time;
     public float PositionInSampleDst => _source.timeSamples;
     public int CompletedLoops => _completedLoops;
+    public bool IsConducting => _isTracking && !_isPaused;
 
     public float BPM { get { return this._localBPM; } private set { } }
     public float BPS

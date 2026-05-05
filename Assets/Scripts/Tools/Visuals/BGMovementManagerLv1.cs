@@ -90,5 +90,6 @@ public class BGMovementManagerLv1 : IPausable
             manager.TransitionToSprite(conductor, levelProgressionSprites[levelProgressionSpritesIndex], 0);
         }
         levelProgressionSpritesIndex++;
+
     }
 }

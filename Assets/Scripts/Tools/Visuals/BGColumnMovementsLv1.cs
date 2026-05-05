@@ -27,6 +27,7 @@ public class BGColumnMovementsLv1 : IPausable
     }
     public void TransitionToSprite(Conductor conductor, Sprite newSprite, int index)
     {
+        Debug.Log(index);
         if (index >= childRenderers.Length)
         {
             return;
@@ -36,7 +37,9 @@ public class BGColumnMovementsLv1 : IPausable
             childRenderers[index], newSprite,
         () =>
         {
-            TransitionToSprite(conductor, newSprite, index++);
+            int newIndex = index + 1;
+            Debug.Log("Inside recursive thing: " + index);
+            TransitionToSprite(conductor, newSprite, newIndex);
         }));
     }
     private IEnumerator AnimateTransition(float duration, SpriteRenderer target, Sprite newSprite, Action next)

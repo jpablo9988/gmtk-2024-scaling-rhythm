@@ -125,6 +125,7 @@ namespace JPA_DialogueSystem
         public virtual void ContinueStory()
         {
             if (currentStory == null) return;
+            if (!_isStoryRunning) return;
             if (currentStory.CanContinue)
             {
                 if (_dialogueHandler.HasTextDisplay)

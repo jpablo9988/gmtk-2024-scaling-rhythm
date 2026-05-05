@@ -23,6 +23,25 @@ public class LevelOneProgression : ILevelProgressor
     public BGMovementManagerLv1 backgroundMover;
     public List<ParticleSystem> bubbles = new();
     public PlayableDirector noTutorialDirector;
+    [SerializeField]
+    private Color startingColor;
+    [SerializeField]
+    private Color endingColor;
+    private float lastAnalog = 0;
+    void Update()
+    {
+        if (!ScoreTally.IsTrackingScore) return;
+        if (!_audioManager.BaseConductor.IsConducting) return;
+        if (_audioManager.BaseConductor.PositionInAnalog > 0.99f)
+        {
+            lastAnalog = 1f;
+        }
+        if (lastAnalog < 1f)
+        {
+            lastAnalog = _audioManager.BaseConductor.PositionInAnalog;
+        }
+        Camera.main.backgroundColor = Color.Lerp(startingColor, endingColor, _audioManager.BaseConductor.PositionInAnalog);
+    }
     private void BuildMap(RhythmTrack track)
     {
         List<RhythmMap.BeatInformation> beatsToAdd = new();
