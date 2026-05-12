@@ -24,7 +24,6 @@ public class ScoreVisuals : MonoBehaviour
 
     private void ShowScoreOnScreen(ScoreType scoreType)
     {
-        Debug.Log(scoreType);
         switch (scoreType)
         {
             case ScoreType.Perfect:

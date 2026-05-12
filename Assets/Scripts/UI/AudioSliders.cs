@@ -15,11 +15,6 @@ public class AudioSliders : MonoBehaviour
         {
             audioManager = FindFirstObjectByType<AudioManager>();
         }
-        fullScreenToggle.enabled = Screen.fullScreen;
-    }
-    void OnEnable()
-    {
-        fullScreenToggle.enabled = Screen.fullScreen;
     }
     public void OnChangeVolume(VolumePackage package)
     {

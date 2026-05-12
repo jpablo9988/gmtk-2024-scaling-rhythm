@@ -11099,6 +11099,10 @@ PrefabInstance:
       propertyPath: WillPlayTutorial
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4412298200802836379, guid: ed8386bed6850564db73f51a61c4ae98, type: 3}
+      propertyPath: m_Raycaster
+      value: 
+      objectReference: {fileID: 2011417263109252313}
     - target: {fileID: 4595590186049752565, guid: ed8386bed6850564db73f51a61c4ae98, type: 3}
       propertyPath: currentControlSchema
       value: 2
@@ -13789,6 +13793,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2011417263109252313 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5079175375862390225, guid: 71b73878bc8f2e244b6da0c6eb7acdbc, type: 3}
+  m_PrefabInstance: {fileID: 2011417263109252310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2016781578035263394
